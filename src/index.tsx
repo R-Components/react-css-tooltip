@@ -1,27 +1,21 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, ElementType } from 'react';
 
 import './index.less';
 
 interface IProps {
-  hello: string;
+  placement: string;
+  text: string;
+  style?: object;
 }
 
-export default class AReactComponent extends React.Component<IProps, { value: string }> {
-  public readonly state = {
-    value: '',
-  };
-  public handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    this.setState({ value: e.target.value });
-  };
+export default class ReactCssTooltip extends React.Component<IProps> {
   public render() {
+    const { placement, text, children, style } = this.props;
+
     return (
-      <div className="a-react-component">
-        AReactComponent
-        <div>
-          <input value={this.state.value} onChange={this.handleChange} />
-        </div>
-        {this.props.hello}:{this.state.value}
-      </div>
+      <a className={`tooltip ${placement}`} style={style} aria-label={text}>
+        {children}
+      </a>
     );
   }
 }
