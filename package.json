@@ -74,7 +74,7 @@
     "rollup-plugin-typescript": "^1.0.1",
     "serve": "^10.0.2",
     "source-map-loader": "^0.2.4",
-    "standard-version": "^4.3.0",
+    "standard-version": "^8.0.1",
     "style-loader": "^0.23.1",
     "tslib": "^1.9.3",
     "tslint": "^5.15.0",
